@@ -25,7 +25,7 @@
     <artifactId>hapi-fhir-jpaserver-starter</artifactId>
     <version>${project.parent.version}-${hapi.fhir.jpa.server.starter.revision}</version>
     <packaging>war</packaging>
-
+    
     <prerequisites>
         <maven>3.8.3</maven>
     </prerequisites>
@@ -389,6 +389,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+          <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-web</artifactId>
+                    <version>${spring_boot_version}</version>
+                </dependency>
 
     </dependencies>
 
@@ -590,24 +595,7 @@
         (the error is 'java.util.ServiceConfigurationError: org.apache.juli.logging.Log: org.eclipse.jetty.apache.jsp.JuliLog not a subtype')
 
          -->
-
-        <!-- example of how to start the server using spring boot-->
-        <!-- mvn clean package spring-boot:repackage -Pboot && java -jar target/ROOT.war -->
-
-        <!-- Use the boot profile for development and debugging options when using your IDE -->
-        <profile>
-            <id>boot</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-web</artifactId>
-                    <version>${spring_boot_version}</version>
-                </dependency>
-            </dependencies>
-        </profile>
+ 
         <!--                                                              -->
         <!-- Examples of how to run the server:                           -->
         <!--                                                              -->
